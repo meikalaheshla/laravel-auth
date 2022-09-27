@@ -23,6 +23,7 @@
       <th scope="row">1</th>
       <td>{{$post->id}}</td>
       <td>{{$post->title}}</td>
+      <td>{{$post->slug}}</td>
       <td>{{$post->created_at}}</td>
       <td>{{$post->updated_at}}</td>
     </tr>
