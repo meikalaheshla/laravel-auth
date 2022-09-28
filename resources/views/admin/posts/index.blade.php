@@ -30,8 +30,13 @@
       <td>{{$post->slug}}</td>
       <td>{{$post->created_at}}</td>
       <td>{{$post->updated_at}}</td>
-      <td>
-        <a class="btn btn-sm btn-primary"href="{{route('admin.posts.show', $post)}}"><i class="fa-2x fa-solid fa-eye mr-1"></i> Apri</a>
+      <td class="d-flex">
+        <a class="btn btn-sm btn-primary mr-1"href="{{route('admin.posts.show', $post)}}"><i class="fa-2x fa-solid fa-eye mr-1"></i> Apri</a>
+        <form action="{{route('admin.posts.destroy', $post->id)}}" method="POST" class="delete-form">
+        @csrf
+        @method('DELETE')
+        <button class="btn btn-danger btn-sm"><i class="fa-2x fa-solid fa-trash-can"></i></button>
+    </form>
       </td>
       <td>
         <a class="btn btn-sm"href=""></a>

@@ -19,7 +19,7 @@
     </div>
     <div class="d-flex justify-content-end align-item-center">
     <a class="btn btn-success btn-sm"href="{{route('admin.posts.store')}}"><i class="fa-2x fa-regular fa-floppy-disk"></i></a>
-    <form action="{{route('admin.posts.destroy', $post->id)}}" method="POST">
+    <form action="{{route('admin.posts.destroy', $post->id)}}" method="POST" class="delete-form">
         @csrf
         @method('DELETE')
         <button class="btn btn-danger btn-sm"><i class="fa-2x fa-solid fa-trash-can"></i></button>

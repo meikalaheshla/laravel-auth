@@ -5,7 +5,7 @@
  */
 
 require('./bootstrap');
-
+require('./delete_confirmation')
 
 //Non utilizzato nel lato admin portato nel file front per esser utilizzato dalle pagine guest
 

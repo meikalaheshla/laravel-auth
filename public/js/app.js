@@ -37300,7 +37300,9 @@ module.exports = function(module) {
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //Non utilizzato nel lato admin portato nel file front per esser utilizzato dalle pagine guest
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
+__webpack_require__(/*! ./delete_confirmation */ "./resources/js/delete_confirmation.js"); //Non utilizzato nel lato admin portato nel file front per esser utilizzato dalle pagine guest
 // window.Vue = require('vue');
 // /**
 //  * The following block of code may be used to automatically register your
@@ -37365,6 +37367,24 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/delete_confirmation.js":
+/*!*********************************************!*\
+  !*** ./resources/js/delete_confirmation.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var deleteForms = document.querySelectorAll('.delete-form');
+deleteForms.forEach(function (form) {
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    var hasConfirmed = window.confirm('Vuoi davvero eliminare questo post?');
+    if (hasConfirmed) form.submit();
+  });
+});
 
 /***/ }),
 
