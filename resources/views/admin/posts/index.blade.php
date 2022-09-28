@@ -1,7 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-
+@if(session('message'))
+<div class="alert alert-{{session('type') ?? 'info'}}">
+    {{session('message')}}
+</div>
+@endif
 <header>
     <h1>Posts</h1>
 
@@ -26,6 +30,15 @@
       <td>{{$post->slug}}</td>
       <td>{{$post->created_at}}</td>
       <td>{{$post->updated_at}}</td>
+      <td>
+        <a class="btn btn-sm btn-primary"href="{{route('admin.posts.show', $post)}}"><i class="fa-2x fa-solid fa-eye mr-1"></i> Apri</a>
+      </td>
+      <td>
+        <a class="btn btn-sm"href=""></a>
+      </td>
+      <td>
+        <button></button>
+      </td>
     </tr>
     @empty
     <tr><td colspan="6" class="text-center"><h2>Non ci sono Post</h2></td></tr>
