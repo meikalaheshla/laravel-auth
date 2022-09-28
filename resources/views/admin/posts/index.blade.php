@@ -6,8 +6,9 @@
     {{session('message')}}
 </div>
 @endif
-<header>
+<header class="d-flex justify-content-between align-items-center">
     <h1>Posts</h1>
+    <a class="btn btn-dark d-flex align-items-center" href="{{route('admin.posts.create')}}"><i class="mr-2 fa fa-2x fa-solid fa-plus"></i>Crea post</a>
 
 </header>
 <table class="table table-hover table-dark">
@@ -24,14 +25,14 @@
   <tbody>
     @forelse($posts as $post)
     <tr>
-      <th scope="row">1</th>
-      <td>{{$post->id}}</td>
+    
+         <td>{{$post->id}}</td>
       <td>{{$post->title}}</td>
       <td>{{$post->slug}}</td>
       <td>{{$post->created_at}}</td>
       <td>{{$post->updated_at}}</td>
       <td class="d-flex">
-        <a class="btn btn-sm btn-primary mr-1"href="{{route('admin.posts.show', $post)}}"><i class="fa-2x fa-solid fa-eye mr-1"></i> Apri</a>
+        <a class="btn btn-sm btn-primary mr-1 d-flex align-items-center"href="{{route('admin.posts.show', $post)}}"><i class="fa-2x fa-solid fa-eye mr-1"></i> Apri</a>
         <form action="{{route('admin.posts.destroy', $post->id)}}" method="POST" class="delete-form">
         @csrf
         @method('DELETE')

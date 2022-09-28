@@ -37302,7 +37302,9 @@ module.exports = function(module) {
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-__webpack_require__(/*! ./delete_confirmation */ "./resources/js/delete_confirmation.js"); //Non utilizzato nel lato admin portato nel file front per esser utilizzato dalle pagine guest
+__webpack_require__(/*! ./delete_confirmation */ "./resources/js/delete_confirmation.js");
+
+__webpack_require__(/*! ./image-preview */ "./resources/js/image-preview.js"); //Non utilizzato nel lato admin portato nel file front per esser utilizzato dalle pagine guest
 // window.Vue = require('vue');
 // /**
 //  * The following block of code may be used to automatically register your
@@ -37384,6 +37386,24 @@ deleteForms.forEach(function (form) {
     var hasConfirmed = window.confirm('Vuoi davvero eliminare questo post?');
     if (hasConfirmed) form.submit();
   });
+});
+
+/***/ }),
+
+/***/ "./resources/js/image-preview.js":
+/*!***************************************!*\
+  !*** ./resources/js/image-preview.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var placeholder = 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/330px-No-Image-Placeholder.svg.png?20200912122019';
+var imageField = document.getElementById('image-field');
+var preview = document.getElementById('preview');
+imageField.addEventListener('input', function () {
+  var _imageField$value;
+
+  preview.src = (_imageField$value = imageField.value) !== null && _imageField$value !== void 0 ? _imageField$value : placeholder;
 });
 
 /***/ }),
