@@ -18,7 +18,8 @@
         <a class="btn btn-sm btn-secondary" href="{{route('admin.posts.index')}}"><i class="fa-solid fa-arrow-left-long"></i>Torna ai posts</a>
     </div>
     <div class="d-flex justify-content-end align-item-center">
-    <a class="btn btn-success btn-sm"href="{{route('admin.posts.store')}}"><i class="fa-2x fa-regular fa-floppy-disk"></i></a>
+    <a class="btn btn-success btn-sm mr-2"href="{{route('admin.posts.store')}}"><i class="fa-2x fa-regular fa-floppy-disk"></i></a>
+    <a class="btn btn-warning mr-2" href="{{route('admin.posts.edit', $post)}}"><i class=" fa-solid fa-file-pen mr-1"></i>Modifica</a>
     <form action="{{route('admin.posts.destroy', $post->id)}}" method="POST" class="delete-form">
         @csrf
         @method('DELETE')

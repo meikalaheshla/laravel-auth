@@ -33,18 +33,14 @@
       <td>{{$post->updated_at}}</td>
       <td class="d-flex">
         <a class="btn btn-sm btn-primary mr-1 d-flex align-items-center"href="{{route('admin.posts.show', $post)}}"><i class="fa-2x fa-solid fa-eye mr-1"></i> Apri</a>
+        <a class="btn btn-warning mr-2" href="{{route('admin.posts.edit', $post)}}"><i class=" fa-solid fa-file-pen mr-1"></i>Modifica</a>
         <form action="{{route('admin.posts.destroy', $post->id)}}" method="POST" class="delete-form">
         @csrf
         @method('DELETE')
         <button class="btn btn-danger btn-sm"><i class="fa-2x fa-solid fa-trash-can"></i></button>
     </form>
       </td>
-      <td>
-        <a class="btn btn-sm"href=""></a>
-      </td>
-      <td>
-        <button></button>
-      </td>
+      
     </tr>
     @empty
     <tr><td colspan="6" class="text-center"><h2>Non ci sono Post</h2></td></tr>
