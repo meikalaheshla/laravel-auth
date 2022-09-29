@@ -2,7 +2,10 @@
 @section('content')
 <header>
     <h1>Crea Post</h1>
-    <form action="{{route('admin.posts.store')}}"method="POST">
+    @include('includes.admin.posts.form')
+
+    {{--delete after completed transfer of form into include file--}}
+    <!-- <form action="{{route('admin.posts.store')}}"method="POST">
         @csrf
        <div class="row">
             <div class="col-12">
@@ -34,7 +37,7 @@
             <a class="btn  btn-secondary" href="{{route('admin.posts.index')}}"><i class="fa-solid fa-arrow-left-long"></i>Torna ai posts</a>
 
             <button class="btn btn-success" type="submit"><i class="fa-solid fa-floppy-disk"></i> Crea</button>
-        </form>
-    </div>
+        </div>
+    </form> -->
 </header>
 @endsection
